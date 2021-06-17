@@ -1,0 +1,29 @@
+<div class="row gy-3" [formGroup]="form">
+    <div class="col-md-12">
+        <input type="text" class="form-control" id="tbx_firstname" placeholder="Nombre" formControlName="nombre" readonly>
+        <div class="invalid-feedback">
+            Campo Inválido.
+        </div>
+    </div>
+    <div class="col-md-12">
+        <input type="text" class="form-control" id="tbx_firstname" placeholder="Ingredientes" formControlName="ingredientes" readonly>
+        <div class="invalid-feedback">
+            Campo Inválido.
+        </div>
+    </div>
+    <div class="col-md-6">
+        <input type="number" class="form-control" id="tbx_firstname" placeholder="Precio" formControlName="precio" readonly>
+        <div class="invalid-feedback">
+            Campo Inválido.
+        </div>
+    </div>
+    <div class="col-md-6">
+        <input type="number" class="form-control" id="tbx_firstname" placeholder="Peso" formControlName="peso" readonly>
+        <div class="invalid-feedback">
+            Campo Inválido.
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-outline-danger" type="button" (click)="onDelete()">Borrar</button>
+    </div>
+</div>

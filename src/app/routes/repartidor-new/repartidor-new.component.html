@@ -1,0 +1,70 @@
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Alta Repartidor</h2>
+        </div>
+        <div class="row g-5" >
+            <app-country-grid (selection)="onSelection($event)" class="col-md-5 col-lg-4 order-md-last"></app-country-grid>
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Datos Repartidor</h4>
+                <form class="needs-validation" [formGroup]="form">
+                    <div class="row gy-3">
+                        <div class="col-md-6">
+                            <label for="tbx_firstname" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" [ngClass]="{'is-invalid': form.get('nombre')?.errors && form.get('nombre')?.dirty}" id="tbx_firstname" placeholder="" formControlName="nombre">
+                            <div class="invalid-feedback">
+                                Campo Inválido.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="tbx_dni" class="form-label">DNI</label>
+                            <input type="number" class="form-control" [ngClass]="{'is-invalid': form.get('dni')?.errors && form.get('dni')?.dirty}" id="tbx_dni" placeholder="" formControlName="dni">
+                            <div class="invalid-feedback">
+                                Campo Inválido.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="age" class="form-label">Edad</label>
+                            <input type="number" class="form-control" [ngClass]="{'is-invalid': form.get('edad')?.errors && form.get('edad')?.dirty}" id="tbx_age" placeholder="" formControlName="edad">
+                            <div class="invalid-feedback">
+                                Campo Inválido.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="cc-cvv" class="form-label">Capacidad</label>
+                            <input type="number" class="form-control" [ngClass]="{'is-invalid': form.get('capacidad')?.errors && form.get('capacidad')?.dirty}" id="cc-cvv" placeholder="" formControlName="capacidad">
+                            <div class="invalid-feedback">
+                                Campo Inválido.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="age" class="form-label">País de origen</label>
+                            <input type="text" class="form-control" [ngClass]="{'is-invalid': form.get('origen')?.errors && form.get('origen')?.dirty}" id="tbx_age" placeholder="" readonly formControlName="origen">
+                            <div class="invalid-feedback">
+                                Campo Inválido.
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <h4 class="mb-3 mt-4">Unidad Propia</h4>
+                    <div class="my-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" formControlName="isActive">
+                            <label class="form-check-label" for="credit">Activo</label>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" (click)="onSubmit()">Continue to checkout</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017–2021 Company Name</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>

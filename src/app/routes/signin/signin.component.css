@@ -1,0 +1,8 @@
+:host {
+  background-color: #000;
+}
+app-sign-in-form {
+  display: inline-flex;
+  margin: auto;
+  margin-top: 150px !important;
+}

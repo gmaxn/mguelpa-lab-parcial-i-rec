@@ -1,0 +1,31 @@
+<div class="row">
+    <h4 class="mb-3">Origen Repartidor</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="tbx_firstname" class="form-label">País</label>
+            <input type="text" class="form-control" [(ngModel)]="country.name" readonly>
+        </div>
+        <div class="col-md-12">
+            <label for="tbx_dni" class="form-label">Región</label>
+            <input type="text" class="form-control" [(ngModel)]="country.region" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="age" class="form-label">Código</label>
+            <input type="text" class="form-control" [(ngModel)]="country.alpha3Code" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="cc-cvv" class="form-label">Time Zone</label>
+            <input type="text" class="form-control" [(ngModel)]="country.timezones" readonly>
+        </div>
+        <div class="col-md-12">
+            <label for="age" class="form-label">Capital</label>
+            <input type="text" class="form-control" [(ngModel)]="country.capital" readonly>
+        </div>
+    </div>
+    <div class="row">
+        <hr class="my-4">
+    </div>
+    <div class="center-align">
+        <img src="{{country.flag}}" alt="" style="height:100px">
+    </div>
+</div>

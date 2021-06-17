@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap);
+#form {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.338);
+  background-color: rgba(206, 206, 206, 0.153);
+  border-radius: 10px;
+  width: 300px;
+  padding: 5px;
+}
+#header {
+  border-top: 0;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+}
+#header:first-child {
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+#body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
+.login_btn {
+  color: #fff;
+  background-color: #ffc312;
+  width: 100px;
+  margin-top: 15px;
+}
+.login_btn:hover {
+  color: auto;
+  background-color: #fff;
+}
+.remember {
+  color: #fff;
+}
+.remember input {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+.links {
+  color: #fff;
+}
+.links a {
+  margin-left: 4px;
+}
+.links span {
+  margin-left: 4px;
+  cursor: pointer;
+  color: #117df0;
+  text-decoration: underline;
+  font-weight: 700;
+}
+.form-control-message.invalid-input > small {
+  color: red;
+  opacity: 1;
+}
+.invalid-input {
+  color: red;
+  opacity: 1;
+  text-shadow: -0.5px 0 #000, 0 0.5px #000, 0.5px 0 #000, 0 -0.5px #000;
+}
+.checked-input {
+  color: green;
+  opacity: 1;
+}
+.pristine-input {
+  opacity: 0;
+}

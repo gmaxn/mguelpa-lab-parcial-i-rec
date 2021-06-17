@@ -1,0 +1,20 @@
+<div class="table-responsive">
+    <table class="table text-center" *ngIf="pizzas && pizzas.length > 0">
+        <thead>
+            <tr>
+                <th style="width: 34%;">Nombre</th>
+                <th style="width: 22%;">Ingredientes</th>
+                <th style="width: 22%;">Precio</th>
+                <th style="width: 22%;">Peso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pizza of pizzas" (click)="onSelection(pizza)">
+                <td>{{pizza.nombre}}</td>
+                <td>{{pizza.ingredientes}}</td>
+                <td>{{pizza.precio}}</td>
+                <td>{{pizza.peso}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

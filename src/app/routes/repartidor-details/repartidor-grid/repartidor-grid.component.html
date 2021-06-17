@@ -1,0 +1,34 @@
+<div id="header">
+    <div class="input-group mb-1">
+      <input class="form-control" type="text" placeholder="Buscar repartidores" [(ngModel)]="filterTerm">
+      <button class="btn btn-outline-secondary" type="button">Buscar</button>
+    </div>
+  </div>
+  <div id="body">
+    <div id="component-wrapper">
+      <div id="person-grid-wrapper">
+        <div id="table-wrapper" class="layout">
+          <table>
+            <thead>
+              <th>DNI</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Capacidad</th>
+              <th>Origen</th>
+              <th>¿Activo?</th>
+            </thead>
+            <tbody *ngIf="filtered && filtered.length">
+              <tr *ngFor="let repartidor of filtered" (click)="onSelect(repartidor)">
+                <td>{{ repartidor.dni }}</td>
+                <td>{{ repartidor.nombre }}</td>
+                <td>{{ repartidor.edad }}</td>
+                <td>{{ repartidor.capacidad }}</td>
+                <td>{{ repartidor.origen }}</td>
+                <td>{{ repartidor.isActive }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

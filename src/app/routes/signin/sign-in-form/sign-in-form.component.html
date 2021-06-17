@@ -1,0 +1,47 @@
+<form id="form" [formGroup]="form">
+    <div id="header">
+        <h3>{{isSignup ? 'Registrarse' : 'Ingresar'}}</h3>
+    </div>
+    <div id="body">
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <input type="email" class="form-control" [ngClass]="[validations.username?.inputClass ?? '']" placeholder="Email" formControlName="username">
+                <div [ngClass]="[validations.username?.tooltipClass ?? '']">
+                    {{validations.username?.message}}
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <input type="password" class="form-control" [ngClass]="[validations.password?.inputClass ?? '']" placeholder="Password" formControlName="password">
+                <div [ngClass]="[validations.password?.tooltipClass ?? '']">
+                    {{validations.password?.message}}
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isSignup" class="form-row">
+            <div class="col-md-12 mb-3">
+                <input type="password" class="form-control" [ngClass]="[validations.confirm?.inputClass ?? '']"  placeholder="Confirmar Password" formControlName="confirm">
+                <div [ngClass]="[validations.confirm?.tooltipClass ?? '']">
+                    {{validations.confirm?.message}}
+                </div>
+            </div>
+        </div>
+        <div class="form-row justify-content-around mb-3">
+            <button *ngIf="!isSignup" class="btn btn-primary float-left col-md-5" (click)="auto('user')">User</button>
+            <button *ngIf="!isSignup" class="btn btn-danger float-left col-md-5" (click)="auto('admin')">Admin</button>
+
+            <button *ngIf="isSignup" class="btn btn-primary float-left col-md-5" (click)="auto('user')">Generar</button>
+            <button *ngIf="!isSignup" class="btn btn-warning float-right col-md-5" (click)="submit()">Sign in</button>
+            <button *ngIf="isSignup" class="btn btn-warning float-right col-md-5" (click)="submit()">Sign up</button>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-center links" *ngIf="!isSignup">
+            Don't have an account?<span (click)="toggleForm()">Sign Up</span>
+        </div>
+        <div class="d-flex justify-content-center links" *ngIf="isSignup">
+            Already signed in?<span (click)="toggleForm()">Sign In</span>
+        </div>
+    </div>
+</form>

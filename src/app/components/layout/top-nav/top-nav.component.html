@@ -1,0 +1,37 @@
+<style>
+    a {
+        margin: 2px;
+    }
+</style>
+<div id="nav">
+
+    <div id="btn_sidenav" class="my_btn" (click)="shownav()" *ngIf="logged">
+        <i class="fas fa-bars fa-1x"></i>
+    </div>
+
+    <div *ngIf="!logged" id="btn_signin" class="my_btn" (click)="signup()">
+        <i class="fas fa-user-plus"></i>
+    </div>
+
+    <div *ngIf="!logged" id="btn_signin" class="my_btn" (click)="signin()" style="width:100px !important;">
+        <span style="margin-right: 10px;">Sign in</span> <i class="fas fa-sign-in-alt"></i>
+    </div>
+    
+    <div *ngIf="logged" id="btn_signin" class="my_btn" (click)="signout()" style="width:100px !important;">
+        <span style="margin-right: 10px;">Sign out</span> <i class="fas fa-sign-out-alt"></i>
+    </div>
+
+
+
+    <div id="mid_bar" class="d-flex flex-row">
+        <a class="btn btn-outline-secondary btn-sm" routerLink="repartidor/alta">Parte 1</a>
+        <a class="btn btn-outline-secondary btn-sm" routerLink="repartidor/detalle">Parte 2</a>
+        <a class="btn btn-outline-secondary btn-sm" routerLink="salen/pizzas">Parte 3</a>
+
+        <!-- <p style="margin:auto" *ngIf="user">Bienvenido {{user?.firstname}} {{user?.lastname}}</p> -->
+    </div>
+    
+    <div id="btn_home" class="visible-borders" style="padding: 10px;">
+
+    </div>
+</div>

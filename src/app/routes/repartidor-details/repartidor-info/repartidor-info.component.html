@@ -1,0 +1,35 @@
+<div class="row">
+    <h4 class="mb-3">Datos Repartidor</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="tbx_firstname" class="form-label">Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="repartidor.nombre" readonly>
+        </div>
+        <div class="col-md-12">
+            <label for="tbx_dni" class="form-label">DNI</label>
+            <input type="number" class="form-control" [(ngModel)]="repartidor.dni" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="age" class="form-label">Edad</label>
+            <input type="number" class="form-control" [(ngModel)]="repartidor.edad" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="cc-cvv" class="form-label">Capacidad</label>
+            <input type="number" class="form-control" [(ngModel)]="repartidor.capacidad" readonly>
+        </div>
+        <div class="col-md-12">
+            <label for="age" class="form-label">País de origen</label>
+            <input type="text" class="form-control" [(ngModel)]="repartidor.origen" readonly>
+        </div>
+    </div>
+    <div class="row">
+        <hr class="my-4">
+    </div>
+    <h4 class="mb-3 mt-4">Unidad Propia</h4>
+    <div class="my-3">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" [(ngModel)]="repartidor.isActive" disabled>
+            <label class="form-check-label" for="credit">Activo</label>
+        </div>
+    </div>
+</div>
