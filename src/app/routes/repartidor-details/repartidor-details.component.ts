@@ -19,13 +19,15 @@ export class RepartidorDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelection(repartidor:any) {    
-    this.ctryService.getCountries().subscribe(
-      res => {
-        this.country = res.filter(r => r.name === repartidor.origen)[0];
-        this.repartidor = repartidor;
-        console.log(this.country);
-      } 
-    )
+  onSelection(repartidor:any) {
+    this.country = repartidor.origen;
+    this.repartidor = repartidor; 
+    // this.ctryService.getCountries().subscribe(
+    //   res => {
+    //     this.country = res.filter(r => r.name === repartidor.origen)[0];
+    //     this.repartidor = repartidor;
+    //     console.log(this.country);
+    //   } 
+    // )
   }
 }

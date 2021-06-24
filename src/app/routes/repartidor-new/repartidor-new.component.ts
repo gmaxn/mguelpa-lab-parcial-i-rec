@@ -16,6 +16,8 @@ export class RepartidorNewComponent implements OnInit {
 
   public states: any = {};
 
+  public selectedCountry?: Country;
+
   constructor(
     private fb: FormBuilder,
     private repaService: RepartidorService,
@@ -29,6 +31,7 @@ export class RepartidorNewComponent implements OnInit {
 
   onSelection(country:Country) {
     this.form.patchValue({ origen: country.name });
+    this.selectedCountry = country;
   }
 
   initForm() {
@@ -58,7 +61,7 @@ export class RepartidorNewComponent implements OnInit {
         nombre: this.form.get('nombre')?.value,
         edad: this.form.get('edad')?.value,
         capacidad: this.form.get('capacidad')?.value,
-        origen: this.form.get('origen')?.value,
+        origen: this.selectedCountry,
         isActive: this.form.get('isActive')?.value,
       };
       this.repaService.registrar(repartidor).then(res => {

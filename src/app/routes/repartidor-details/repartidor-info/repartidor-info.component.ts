@@ -19,7 +19,9 @@ export class RepartidorInfoComponent implements OnInit {
       nombre:null,
       edad:null,
       capacidad:null,
-      origen:null,
+      origen:{
+        name: null
+      },
       isActive:null
     };
   }
