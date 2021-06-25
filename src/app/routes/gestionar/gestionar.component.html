@@ -1,0 +1,110 @@
+<style>
+    :host {
+        display: block;
+        /* grid-template-columns: 45% 10% 45%;
+        grid-template-rows: 20px auto 20px auto 20px auto; */
+        height: 100%;
+
+    }
+
+    .repartidores {
+        /* grid-column: 1;
+        grid-row: 2; */
+    }
+    .pizzas {
+        /* grid-column: 3;
+        grid-row: 2; */
+    }
+    
+    .pedidos {
+
+    }
+</style>
+
+<div class="row gy-3">
+    <div class="row">
+        <div class="repartidores visible-borders col-md-6">
+            <app-repartidor-grid (selection)="onRepartidor($event)"></app-repartidor-grid>
+        </div>
+        
+        <div class="pizzas visible-borders col-md-6">
+            <app-pizzas-grid *ngIf="repartidor" [pizzas]="pizzas" (selection)="onPizza($event)"></app-pizzas-grid>
+        </div>
+    
+    </div>
+    <div class="row">
+        <div class="pedidos col-md-6 visible-borders" *ngIf="repartidor">
+            <h3 class="display-3">Pedidos</h3>
+            <div class="row gy-3" [formGroup]="form">
+
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table text-center" *ngIf="selectedPizzas && selectedPizzas.length > 0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 34%;">Nombre</th>
+                                    <th style="width: 22%;">Precio</th>
+                                    <th style="width: 22%;">Cantidad</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let pizza of selectedPizzas" >
+                                    <td>{{pizza.nombre}}</td>
+                                    <td>{{pizza.precio}}</td>
+                                    <td>{{pizza.cantidad}}</td>
+                                    <td><button class="btn btn-outline-primary" (click)="onRemove(pizza)">Remover</button></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" [ngClass]="{'is-invalid': isInvalid}" id="tbx_firstname" placeholder="Total" formControlName="total" readonly>
+                        <div class="invalid-feedback">
+                            Superó la capacidad del repartidor.
+                        </div>
+                    </div>
+                    <!-- <input type="text" class="form-control" id="tbx_firstname" placeholder="cantidad" formControlName="cantidad">
+                    <div class="invalid-feedback">
+                        Campo Inválido.
+                    </div> -->
+                </div>
+                <!-- <div class="col-md-12">
+                    <input type="text" class="form-control" id="tbx_firstname" placeholder="total" formControlName="precio" disabled>
+                    <div class="invalid-feedback">
+                        Campo Inválido.
+                    </div>
+                </div> -->
+                <!-- <div class="col-md-12">
+                    <input type="text" class="form-control" id="tbx_firstname" placeholder="Ingredientes" formControlName="ingredientes">
+                    <div class="invalid-feedback">
+                        Campo Inválido.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" class="form-control" id="tbx_firstname" placeholder="Precio" formControlName="precio">
+                    <div class="invalid-feedback">
+                        Campo Inválido.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" class="form-control" id="tbx_firstname" placeholder="Peso" formControlName="peso">
+                    <div class="invalid-feedback">
+                        Campo Inválido.
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button class="btn btn-outline-primary" type="button" (click)="onCreate()">Crear</button>
+                </div> -->
+            </div>
+        
+        </div>
+    
+    </div>
+</div>
+
+
+
+

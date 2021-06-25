@@ -16,7 +16,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RepartidorNewComponent } from './routes/repartidor-new/repartidor-new.component';
 import { CountryGridComponent } from './routes/repartidor-new/country-grid/country-grid.component';
 import { RepartidorDetailsComponent } from './routes/repartidor-details/repartidor-details.component';
@@ -28,6 +28,7 @@ import { PizzaNewFormComponent } from './routes/salen-pizzas/pizza-new-form/pizz
 import { PizzaEditFormComponent } from './routes/salen-pizzas/pizza-edit-form/pizza-edit-form.component';
 import { PizzaDeleteFormComponent } from './routes/salen-pizzas/pizza-delete-form/pizza-delete-form.component';
 import { PizzasGridComponent } from './routes/salen-pizzas/pizzas-grid/pizzas-grid.component';
+import { GestionarComponent } from './routes/gestionar/gestionar.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { PizzasGridComponent } from './routes/salen-pizzas/pizzas-grid/pizzas-gr
     PizzaNewFormComponent,
     PizzaEditFormComponent,
     PizzaDeleteFormComponent,
-    PizzasGridComponent
+    PizzasGridComponent,
+    GestionarComponent
   ],
   imports: [
     BrowserModule,

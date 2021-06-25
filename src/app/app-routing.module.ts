@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GestionarComponent } from './routes/gestionar/gestionar.component';
 import { HomeComponent } from './routes/home/home.component';
 import { RepartidorDetailsComponent } from './routes/repartidor-details/repartidor-details.component';
 import { RepartidorNewComponent } from './routes/repartidor-new/repartidor-new.component';
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: 'repartidor/alta', component: RepartidorNewComponent, canActivate: [UserGuardService] },
   { path: 'repartidor/detalle', component: RepartidorDetailsComponent, canActivate: [UserGuardService] },
   { path: 'salen/pizzas', component: SalenPizzasComponent, canActivate: [AdminGuardService] },
+  { path: 'gestionar', component: GestionarComponent, canActivate: [UserGuardService] },
+
   { path: '', component: HomeComponent },
   { path: '**', component: HomeComponent }
 ];
